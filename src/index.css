@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-container{
+    @apply bg-[#E0E0E0]
+}
+
+.active{
+    @apply  tracking-wide text-blue-500 sm:text-sm md:font-medium transition-colors duration-200 hover:text-blue-400
+  }
+  
+  .default{
+    @apply  tracking-wide text-gray-200  sm:text-sm md:font-medium transition-colors duration-200 hover:text-blue-400
+  }
+
+  .my-container{
+    @apply px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20
+  }
+
+  @layer utilities{
+    @keyframes animate-text {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .title-text{
+      @apply  bg-gradient-to-r from-cyan-500 via-blue-800 to-cyan-400 bg-clip-text text-transparent font-black;
+      background-size: 200% 200%; /* Ensures the gradient is large enough to shift */
+      animation: animate-text 4s ease infinite;
+    }
+  }
+
+  .bg-gradient{
+    @apply bg-gradient-to-r from-blue-500 from-10% via-sky-400 via-30% to-blue-500 to-90%
+  }
+  
