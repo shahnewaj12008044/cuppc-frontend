@@ -11,6 +11,9 @@ import JoinClub from './components/JoinClub.jsx';
 import Member from './components/Member.jsx';
 import Courses from './components/Courses.jsx';
 import DeptServices from './components/DeptServices.jsx';
+import  { playlistLoader } from './loaders/playListLoader.js';
+
+
 
 const router = createBrowserRouter([
   {
@@ -30,7 +33,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/courses',
-        element:<Courses></Courses>
+        element:<Courses></Courses>,
+        loader:playlistLoader
       },
       {
         path:'/deparment-Service',
