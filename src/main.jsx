@@ -9,9 +9,11 @@ import {
 import Home from './Home.jsx';
 import JoinClub from './components/JoinClub.jsx';
 import Member from './components/Member.jsx';
-import Courses from './components/Courses.jsx';
+import Courses from './components/Courses/Courses.jsx';
 import DeptServices from './components/DeptServices.jsx';
 import  { playlistLoader } from './loaders/playListLoader.js';
+import CourseDetails from './components/Courses/CourseDetails.jsx';
+import allPlayListLoader from './loaders/allPlaylistLoader.js';
 
 
 
@@ -34,6 +36,11 @@ const router = createBrowserRouter([
       {
         path:'/courses',
         element:<Courses></Courses>,
+        loader:allPlayListLoader
+      },
+      {
+        path:'/courses/:id',
+        element:<CourseDetails></CourseDetails>,
         loader:playlistLoader
       },
       {

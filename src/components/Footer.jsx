@@ -50,7 +50,7 @@ const Footer = () => {
       {/* logo-section */}
       <ul className="flex flex-row gap-4">
         <li className="text-blue-500">
-          <FontAwesomeIcon icon={faFacebook} size="" />
+          <FontAwesomeIcon icon={faFacebook} />
         </li>
         <li>
           <Link
@@ -59,14 +59,14 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-red-500 hover:text-red-600"
           >
-            <FontAwesomeIcon icon={faYoutube} size="" />
+            <FontAwesomeIcon icon={faYoutube} />
           </Link>
         </li>
         <li className="">
-          <FontAwesomeIcon icon={faXTwitter} size="" />
+          <FontAwesomeIcon icon={faXTwitter}  />
         </li>
         <li className="text-blue-500">
-          <FontAwesomeIcon icon={faLinkedinIn} size="" />
+          <FontAwesomeIcon icon={faLinkedinIn} />
         </li>
       </ul>
       <div className="absolute bottom-0 text-sm text-center text-gray-400">
