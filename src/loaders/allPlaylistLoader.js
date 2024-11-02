@@ -1,14 +1,38 @@
-const API_KEY = 'AIzaSyCbpi5KrHcnA9zkzug6j6U3LRh--KeB6cw';
-const CHANNEL_ID = 'UCbsWfrMWpI5LJd4D6tBlWQQ';
+// import Config from "../config";
+
+// const allPlayListLoader = async () => {
+//   const response = await fetch(`https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${Config.channel_id}&key=${Config.api_key}&maxResults=50`);
+//   const data = await response.json();
+//   return data.items;
+// };
+
+// allPlayListLoader().then(playlists => {
+//   console.log(playlists);
+// });
+
+// export default allPlayListLoader
+
+import Config from "../config";
 
 const allPlayListLoader = async () => {
-  const response = await fetch(`https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${CHANNEL_ID}&key=${API_KEY}&maxResults=50`);
-  const data = await response.json();
-  return data.items;
+  try {
+
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${Config.channel_id}&key=${Config.api_key}&maxResults=50`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.items;
+  } catch (error) {
+    console.error("Error fetching playlists:", error);
+    return [];
+  }
 };
 
 allPlayListLoader().then(playlists => {
   console.log(playlists);
 });
 
-export default allPlayListLoader
+export default allPlayListLoader;
