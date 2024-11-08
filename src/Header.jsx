@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Link, NavLink } from "react-router-dom";
+import { LuLogIn } from "react-icons/lu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     // for large device
-    <div className="sticky top-0 z-50 shadow bg-[#0A0A23] px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div className="sticky top-0 z-50 shadow bg-[#0A0A23] px-4 py-5 mx-auto sm:max-w-full md:max-w-full lg:max-w-screen md:px-24 lg:px-8">
   
       <div className="relative flex items-center justify-between">
         {/* logo section */}
@@ -49,6 +50,14 @@ const Header = () => {
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Deparment Service
+            </NavLink>
+          </li>
+          <li >
+            <NavLink
+              to="/auth"
+             className={({isActive})=>(isActive?"text-[#0A0A23] btn-primary flex items-center justify-center":"text-white btn-primary")}
+            >
+             Sign in  <LuLogIn className="ml-1 size-5" />
             </NavLink>
           </li>
         </ul>
@@ -119,6 +128,14 @@ const Header = () => {
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                       >
                         Department Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/auth"
+                        className="btn-primary flex justify-center "
+                      >
+                        sign in <LuLogIn className="ml-2"/>
                       </Link>
                     </li>
                   </ul>

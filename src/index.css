@@ -42,3 +42,6 @@
     @apply bg-gradient-to-r from-blue-500 from-10% via-sky-400 via-30% to-blue-500 to-90%
   }
   
+  .btn-primary{
+    @apply bg-[#1E90FF]  px-8 py-1 flex items-center text-base font-bold    rounded-full hover:bg-blue-600 transition-colors
+  }

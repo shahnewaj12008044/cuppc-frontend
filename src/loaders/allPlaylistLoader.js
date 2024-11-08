@@ -32,7 +32,7 @@ const allPlayListLoader = async () => {
 };
 
 allPlayListLoader().then(playlists => {
-  console.log(playlists);
+  // console.log(playlists);
 });
 
 export default allPlayListLoader;
